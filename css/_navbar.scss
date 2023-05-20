@@ -1,0 +1,60 @@
+@use 'variables' as *;
+@use 'Responsive' as *;
+
+.navbar{
+    background-color: $light;
+    height: 80Px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    padding: 20Px 8%;
+
+    .logo{
+      text-decoration: none;
+      font-size: 1.5rem;
+      color: $dark;
+    }
+.menu{
+        opacity: 0;
+        @include breakpoint(mobile){
+            opacity: 1;
+            font-size: 1rem;
+            color: $dark;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20Px;
+            cursor: pointer;
+        }
+    }
+    .links{
+           text-align: center;
+           @include breakpoint('mobile'){
+            display: none;
+           }
+           a{
+            text-decoration: none;
+            color: $dark;
+            margin-left: 20px;
+            font-size: 1.1rem;
+            transition: .4s ease;
+            cursor: pointer;
+            &:hover{
+                color: $lime;
+            }
+            &.btn{
+                padding: 10Px;
+                background-color: $lime;
+                color: $light;
+                border-radius: 4px;
+                &:hover{
+                    background-color: $orangered;
+                }
+            }
+           }
+          
+    }
+}
